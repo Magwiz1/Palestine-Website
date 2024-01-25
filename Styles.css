@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    direction: rtl;
+}
+
+body {
+    background-image: url(main.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+header {
+    height: 70px; 
+    width: 100%;
+    background-color: #2d2d2d;
+    padding: 15px;
+    box-sizing: border-box;
+    
+}
+
+
+header nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    margin-left: 280px;
+}
+
+header nav ul li {
+    list-style: none; 
+    margin: 0 15px;
+}
+
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.2s;
+    padding: 10px;
+}
+
+header nav {
+    width: 100%;
+}
+
+header nav ul li a:hover {
+    color: #b8b7b7;
+    transform: scale(1.1);
+} 
+
+.content {
+    padding: 15px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+.content p {
+    font-size: 25px;
+    font-weight: 900;
+    color: #ffffff;
+    text-align: right;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+
+.helal img{
+    width: auto;
+    height: 45px;
+    position: relative;
+    top: -5px;
+}
+
+.helal a{
+    margin-bottom: -60px;
+    padding: 5px;
+    color: red;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+    
+}
+
+.helal a:hover{
+    color: rgb(196, 55, 55);
+    transform: scale(1.5);
+}
+
+.islamic-r img{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    left: 375px;
+    top: -2px;
+    
+}
+
+.islamic-r a {
+    text-decoration: none;
+    color: rgb(0, 204, 255);
+    padding: 4px 55px;
+    font-size: 25px;    
+    font-weight: 700;
+    transition: 0.3s;
+
+}
+
+.islamic-r a:hover{
+    color: rgb(37, 172, 206);
+}
+
+.sahem img {
+    width: auto;
+    height: 50px;
+    position: relative;
+    top: 4px;
+    left: 4px;
+}
+
+.sahem a {
+    color: #086c38;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 11px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.sahem a:hover{
+    color: rgb(24, 128, 24)
+}
+
+.live-makers img{
+    width: auto;
+    height: 65px;
+    position: relative;
+    top: 10px;
+    left: 12px;
+}
+
+.live-makers a {
+    text-decoration: none;
+    color: rgb(45, 45, 126);
+    font-weight: 700;
+    font-size: 27px;
+    transition: 0.4s;
+    position: relative;
+    top: 7px;    
+}
+
+.live-makers a:hover{
+    color: rgb(17, 29, 94);
+}
+
+
+
+::-webkit-scrollbar {
+    color: white;
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #086c38;
+    width: 5px;
+    height: 5px;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة التعليقات</title>
+</head>
+<body>
+
+<h2>تعليقات المستخدمين</h2>
+
+<!-- عرض التعليقات -->
+<div id="comments-container"></div>
+
+<!-- نموذج التعليق -->
+<form id="comment-form">
+    <label for="username">اسم المستخدم:</label>
+    <input type="text" id="username" required><br>
+
+    <label for="comment">التعليق:</label>
+    <textarea id="comment" required></textarea><br>
+
+    <button type="button" onclick="submitComment()">أرسل التعليق</button>
+</form>
+
+<script>
+     // عرض التعليقات عند تحميل الصفحة
+     window.onload = function () {
+        fetchComments();
+    }
+
+    // دالة لإرسال التعليق
+    function submitComment() {
+        var username = document.getElementById("username").value;
+        var comment = document.getElementById("comment").value;
+
+        // إرسال التعليق إلى الخادم
+        fetch('/comments', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ comment: comment }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // إرسال نجح، أعيد تحميل التعليقات
+                fetchComments();
+            } else {
+                alert("تعليق مكرر");
+            }
+        });
+    }
+    function fetchComments() {
+        fetch('/comments')
+        .then(response => response.json())
+        .then(data => {
+            var commentContainer = document.getElementById("comments-container");
+            commentContainer.innerHTML = "<h3>تعليقات المستخدمين</h3>";
+
+            // عرض التعليقات
+            data.forEach(comment => {
+                commentContainer.innerHTML += "<p>" + comment + "</p>";
+            });
+        });
+    }
+</script>
+
+</body>
+</html>
